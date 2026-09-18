@@ -70,6 +70,49 @@ body {
     justify-content: space-between;
 }
 
+/* Navbar Actions */
+
+.nav-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+/* Theme Button */
+
+.theme-btn {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: var(--text-color);
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    transition: 0.3s;
+}
+
+
+.theme-btn:hover {
+    border-color: var(--primary-color);
+
+    transform: translateY(-2px);
+}
+
 
 
 .logo {
@@ -106,8 +149,8 @@ body {
 
 
 
-.menu-btn {
-    display: none;
+.menu-btn {  
+    display: block;
 
     background: transparent;
     color: white;

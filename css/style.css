@@ -147,6 +147,42 @@ body {
 }
 
 
+.hero-description {
+    max-width: 600px;
+    margin-top: 35px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.primary-button,
+.secondary-button {
+    padding: 13px 22px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.primary-button {
+    background-color: #bef264;
+    color: #050706;
+}
+
+.secondary-button {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+.primary-button:hover,
+.secondary-button:hover {
+    opacity: 0.8;
+}
 
 
 .menu-btn {  
@@ -433,8 +469,13 @@ body {
 
 @media (max-width: 600px) {
 
-    .events-container {
-        grid-template-columns: 1fr;
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 200px;
     }
 
 }

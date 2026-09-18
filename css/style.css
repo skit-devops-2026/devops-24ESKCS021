@@ -1,4 +1,15 @@
+:root {
+    --background-color: #050706;
+    --secondary-background: #0c120e;
+    --card-background: #14261b;
 
+    --text-color: #ffffff;
+    --secondary-text: rgba(255, 255, 255, 0.7);
+
+    --border-color: rgba(255, 255, 255, 0.15);
+
+    --primary-color: #bef264;
+}
 
 * {
     margin: 0;
@@ -7,14 +18,26 @@
 }
 
 
+body.light {
+    --background-color: #f5f7f3;
+    --secondary-background: #ffffff;
+    --card-background: #e8eee4;
+
+    --text-color: #151815;
+    --secondary-text: rgba(21, 24, 21, 0.7);
+
+    --border-color: rgba(21, 24, 21, 0.15);
+
+    --primary-color: #4d7c0f;
+}
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #050706;
-    color: white;
+
+    background-color: var(--background-color);
+
+    color: var(--text-color);
 }
-
-
 
 
 .container,

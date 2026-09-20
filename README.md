@@ -21,3 +21,5 @@ Campus Connect is a web-based platform designed to help students discover campus
 ```bash
 make install
 make run
+
+```

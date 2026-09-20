@@ -22,3 +22,4 @@ Campus Connect is a web-based platform designed to help students discover campus
 make install
 make run
 
+```

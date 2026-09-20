@@ -4,8 +4,8 @@ install:
 	@echo "No external dependencies required for this static web project"
 
 test:
-	@test -f index.html
 	@test -f events.html
+        @test -f events-does-not-exist.html
 	@test -f css/style.css
 	@test -f js/script.js
 	@echo "All required project files are present"

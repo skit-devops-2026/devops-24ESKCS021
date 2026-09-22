@@ -8,6 +8,7 @@ test:
 	@test -f events.html
 	@test -f css/style.css
 	@test -f js/script.js
+	./tests/test_site.sh
 	@echo "All required project files are present"
 
 build:

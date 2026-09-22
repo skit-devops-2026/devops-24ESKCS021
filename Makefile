@@ -7,7 +7,7 @@ test:
 	@test -f index.html
 	@test -f events.html
 	@test -f css/style.css
-	@test -f js/script.js
+	@test -f js/main.js
 	bash tests/test_site.sh
 	@echo "All required project files are present"
 

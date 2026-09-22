@@ -23,3 +23,18 @@ make install
 make run
 
 ```
+
+## Continuous Integration
+
+The project uses GitHub Actions for continuous integration.
+
+The CI workflow:
+- checks repository hygiene
+- runs the project test suite
+- runs the build target
+- runs automatically on pushes and pull requests
+
+Local test and build commands:
+
+    make test
+    make build

@@ -18,7 +18,7 @@ run:
 	@echo "Open index.html in a browser to run the project"
 
 docker-build:
-	@echo "Docker build will be configured in the containerization module"
+	docker build -t campus-connect:1.0 .
 
 docker-up:
 	docker compose up --build

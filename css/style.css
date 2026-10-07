@@ -420,7 +420,50 @@ body {
 .events-section {
     margin-top: 80px;
 }
+/* Event Search and Filter */
 
+.event-controls {
+    display: flex;
+    gap: 15px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.event-controls input,
+.event-controls select {
+    padding: 13px 15px;
+
+    background-color: #0c120e;
+    color: white;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    border-radius: 8px;
+
+    font-size: 14px;
+}
+
+.event-controls input {
+    width: 300px;
+}
+
+.event-controls input:focus,
+.event-controls select:focus {
+    outline: none;
+    border-color: #bef264;
+}
+
+@media (max-width: 600px) {
+
+    .event-controls {
+        flex-direction: column;
+    }
+
+    .event-controls input {
+        width: 100%;
+    }
+
+}
 
 .events-section h2 {
     font-size: 35px;

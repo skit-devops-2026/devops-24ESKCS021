@@ -1,0 +1,20 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: campus-connect
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: campus-connect
+  template:
+    metadata:
+      labels:
+        app: campus-connect
+    spec:
+      containers:
+        - name: campus-connect
+          image: ghcr.io/aditya-0raj/devops-24eskcs021:latest
+          ports:
+            - containerPort: 80
+          imagePullPolicy: Always

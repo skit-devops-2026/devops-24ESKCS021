@@ -10,6 +10,11 @@
 
 Campus Connect is a web-based platform designed to help students discover campus events and stay connected with activities happening in their college. It provides a simple interface for viewing and accessing information about campus events.
 
+## Live Deployment
+
+Live URL: https://devops-24eskcs021.onrender.com
+Hosting: Render Static Site
+
 ## Tech stack
 
 - Frontend: HTML, CSS, JavaScript

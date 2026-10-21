@@ -652,3 +652,63 @@ a {
     }
 
 }
+.clubs-page {
+    min-height: 100vh;
+    padding: 160px 0 80px;
+}
+
+.clubs-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 60px;
+}
+
+.club-card {
+    padding: 30px;
+    background-color: #0c120e;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+}
+
+.club-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(190, 242, 100, 0.5);
+}
+
+.club-icon {
+    color: #bef264;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.club-card h2 {
+    margin-top: 25px;
+}
+
+.club-card p {
+    margin-top: 15px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+}
+
+.club-card .event-button {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+@media (max-width: 900px) {
+
+    .clubs-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .clubs-container {
+        grid-template-columns: 1fr;
+    }
+
+}

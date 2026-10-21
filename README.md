@@ -12,7 +12,7 @@ Campus Connect is a web-based platform designed to help students discover campus
 
 ## Live Deployment
 
-Live URL: https://devops-24eskcs021.onrender.com
+link : https://devops-24eskcs021.onrender.com
 Hosting: Render Static Site
 
 ## Tech stack

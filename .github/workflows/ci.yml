@@ -5,12 +5,17 @@ on:
   push:
   pull_request:
 
+permissions:
+  contents: read
+  packages: write
+
 jobs:
   hygiene:
     name: Repository hygiene
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -21,14 +26,20 @@ jobs:
     name: Build and test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - run: make install
-      - run: make test
-      - run: make build
+      - name: Install dependencies
+        run: make install
+
+      - name: Run tests
+        run: make test
+
+      - name: Build
+        run: make build
 
   docker:
-    name: Build and push images
+    name: Build and push Docker image
     needs: build-and-test
     runs-on: ubuntu-latest
     permissions:
@@ -57,4 +68,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ steps.image.outputs.name }}:${{ github.sha }}
+          tags: |
+            ${{ steps.image.outputs.name }}:latest
+            ${{ steps.image.outputs.name }}:${{ github.sha }}

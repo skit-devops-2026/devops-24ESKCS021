@@ -74,3 +74,20 @@ if (searchInput && categoryFilter) {
     );
 
 }
+const themeButton = document.getElementById("themeButton");
+
+if (themeButton) {
+
+    themeButton.addEventListener("click", function () {
+
+        document.body.classList.toggle("light-theme");
+
+        if (document.body.classList.contains("light-theme")) {
+            themeButton.textContent = "☾";
+        } else {
+            themeButton.textContent = "☀";
+        }
+
+    });
+
+}

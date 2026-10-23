@@ -1,45 +1,16 @@
-# Campus Connect
+# React + Vite
 
-## Author
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-| Roll No. | Name | GitHub username |
-|---|---|---|
-| 24ESKCS021 | Aditya Raj | Aditya-0RAJ |
+Currently, two official plugins are available:
 
-## About
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-Campus Connect is a web-based platform designed to help students discover campus events and stay connected with activities happening in their college. It provides a simple interface for viewing and accessing information about campus events.
+## React Compiler
 
-## Live Deployment
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-https://devops-24eskcs021.onrender.com
+## Expanding the ESLint configuration
 
-
-## Tech stack
-
-- Frontend: HTML, CSS, JavaScript
-- Backend: None
-- Database: None
-
-## Running locally
-
-```bash
-make install
-make run
-
-```
-
-## Continuous Integration
-
-The project uses GitHub Actions for continuous integration.
-
-The CI workflow:
-- checks repository hygiene
-- runs the project test suite
-- runs the build target
-- runs automatically on pushes and pull requests
-
-Local test and build commands:
-
-    make test
-    make build
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

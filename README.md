@@ -1,104 +1,124 @@
+# Campus Connect
 
-Campus Connect
+## Author
 
-Author
+| **Roll No.** | **Name** | **GitHub username** |
+| ------------ | -------- | ------------------- |
+| 24ESKCS021 | Aditya Raj | Aditya-0Raj |
 
-Roll No.| Name| GitHub username
-24ESKCS021| Aditya Raj| Aditya-0Raj
-
-About
+## About
 
 Campus Connect is a web-based platform that helps students discover campus events and stay informed about activities happening in their college.
 
-Tech stack
+## Tech stack
 
-- Frontend: HTML, CSS, JavaScript
-- Web server: NGINX
-- Containerization: Docker, Docker Compose
-- CI: GitHub Actions
-- Monitoring: Prometheus
-- Deployment: Render
-- Kubernetes: Kind
+- Frontend: React, HTML, CSS, JavaScript
+- Backend: None
+- Database: None
 
-Running locally
+## Running locally
 
+```bash
 make install
 make run
+```
 
-Live URL
+## Live URL
 
 https://devops-24eskcs021.onrender.com
 
-Docker
+## Docker Image
 
-Build the Docker image:
+Build the Docker image locally:
 
+```bash
 docker build -t campus-connect:1.0 .
+```
 
-Run the application:
+Run the container:
 
+```bash
 docker run -d --name campus-connect -p 8080:80 campus-connect:1.0
+```
 
-Open http://localhost:8080.
+## Monitoring
 
-Monitoring
+Prometheus configuration and dashboard files are stored in the `monitoring/` directory.
 
-Prometheus configuration is available in the "monitoring/" directory.
+Prometheus URL: http://localhost:9090
 
-Prometheus local URL: http://localhost:9090
+## Kubernetes Deployment
 
-Example queries:
+Kubernetes manifests are available in the `k8s/` directory:
 
-up{job="prometheus"}
+- `deployment.yaml` — application deployment.
+- `service.yaml` — application service.
 
-count(up)
+## Project Structure
 
-Kubernetes Deployment
-
-Kubernetes manifests are available in the "k8s/" directory:
-
-- "deployment.yaml" — application deployment.
-- "service.yaml" — application service.
-
-Apply the manifests:
-
-kubectl apply -f k8s/deployment.yaml
-kubectl apply -f k8s/service.yaml
-
-Check pod status:
-
-kubectl get pods
-
-Project Structure
-
+```text
 .
-├── .github/
-│   └── workflows/
-│       └── ci.yml
+├── index.html
+├── events.html
+├── clubs.html
 ├── css/
 │   └── style.css
 ├── js/
+│   └── main.js
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   └── Navbar.jsx
+│   ├── pages/
+│   │   └── Home.jsx
+│   ├── App.css
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
+├── public/
 ├── tests/
+│   └── test_site.sh
 ├── scripts/
+│   └── hygiene.sh
 ├── monitoring/
-│   ├── prometheus.yml
+│   ├── dashboard.json
+│   ├── dashboard.md
 │   ├── docker-compose.yml
-│   └── dashboard.md
+│   └── prometheus.yml
 ├── k8s/
 │   ├── deployment.yaml
 │   └── service.yaml
 ├── docs/
+│   ├── deployment.png
+│   ├── kubernetes-pods.png
+│   └── monitoring.png
+├── .github/
+│   └── workflows/
+│       └── ci.yml
 ├── Dockerfile
 ├── docker-compose.yml
+├── Jenkinsfile
 ├── Makefile
-├── index.html
-├── events.html
-└── README.md
+├── package.json
+├── package-lock.json
+├── eslint.config.js
+└── vite.config.js
+```
 
-CI
+## Run with Docker Compose
 
-GitHub Actions workflow:
+```bash
+docker compose up -d --build
+```
 
-".github/workflows/ci.yml"
+Application: http://localhost:8080
 
-The workflow runs the project's configured hygiene checks, tests, and build commands.
+Stop the services:
+
+```bash
+docker compose down
+```
+
+## CI
+
+GitHub Actions runs repository hygiene checks and the project's test and build commands on pushes and pull requests.

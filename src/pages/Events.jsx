@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Events = () => {
+  const [search, setSearch] = useState("");
+  const [category, setCategory] = useState("All");
+
   const events = [
     {
       name: "Campus Hackathon",
@@ -19,22 +22,51 @@ const Events = () => {
     },
   ];
 
+  const filteredEvents = events.filter((event) => {
+    const matchesSearch = event.name
+      .toLowerCase()
+      .includes(search.toLowerCase());
+
+    const matchesCategory =
+      category === "All" || event.category === category;
+
+    return matchesSearch && matchesCategory;
+  });
+
   return (
     <section className="min-h-screen bg-[#050706] px-5 py-12 sm:px-8 md:px-12">
       <div className="mx-auto max-w-6xl">
-        <p className="mb-3 text-sm text-lime-300">CAMPUS CONNECT</p>
-
         <h1 className="text-4xl font-bold text-white sm:text-5xl">
           Campus Events
         </h1>
 
-        <p className="mt-4 max-w-xl text-base text-gray-400 sm:text-lg">
-          Discover events, explore your interests and make your college
-          experience better.
+        <p className="mt-4 text-gray-400">
+          Search events or choose your favourite category.
         </p>
 
-        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {events.map((event) => (
+        <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+          <input
+            type="text"
+            placeholder="Search events..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="w-full rounded-lg border border-gray-700 bg-[#0b0e0c] p-4 text-white sm:flex-1"
+          />
+
+          <select
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+            className="w-full rounded-lg border border-gray-700 bg-[#0b0e0c] p-4 text-white sm:w-56"
+          >
+            <option value="All">All Categories</option>
+            <option value="Technology">Technology</option>
+            <option value="Cultural">Cultural</option>
+            <option value="Sports">Sports</option>
+          </select>
+        </div>
+
+        <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {filteredEvents.map((event) => (
             <div
               key={event.name}
               className="rounded-xl border border-gray-800 bg-[#0b0e0c] p-6"
@@ -57,6 +89,12 @@ const Events = () => {
             </div>
           ))}
         </div>
+
+        {filteredEvents.length === 0 && (
+          <p className="mt-8 text-gray-400">
+            No events found. Try another search.
+          </p>
+        )}
       </div>
     </section>
   );

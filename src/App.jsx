@@ -1,5 +1,5 @@
-
 import React from "react";
+import Clubs from "./pages/Clubs";
 import Events from "./pages/Events";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
@@ -13,6 +13,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/events" element={<Events />} />
+        <Route path="/clubs" element={<Clubs />} />
       </Routes>
     </div>
   );

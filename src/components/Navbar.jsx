@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -6,9 +5,9 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-[#050706] px-5 py-5 md:px-12">
+    <nav className="bg-[#050706] px-5 py-5">
       <div className="flex items-center justify-between">
-        <Link to="/" className="text-xl font-bold text-white md:text-2xl">
+        <Link to="/" className="text-xl font-bold text-white">
           Campus<span className="text-lime-300">Connect</span>
         </Link>
 
@@ -19,15 +18,15 @@ const Navbar = () => {
           {menuOpen ? "Close" : "Menu"}
         </button>
 
-        <div className="hidden gap-8 text-white md:flex">
-          <Link to="/" className="hover:text-lime-300">Home</Link>
-          <Link to="/events" className="hover:text-lime-300">Events</Link>
-          <Link to="/clubs" className="hover:text-lime-300">Clubs</Link>
+        <div className="hidden gap-6 text-white md:flex">
+          <Link to="/">Home</Link>
+          <Link to="/events">Events</Link>
+          <Link to="/clubs">Clubs</Link>
         </div>
       </div>
 
       {menuOpen && (
-        <div className="mt-5 flex flex-col gap-5 border-t border-gray-800 pt-5 text-white md:hidden">
+        <div className="mt-5 flex flex-col gap-5 border-t border-gray-700 pt-5 text-white md:hidden">
           <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
           <Link to="/events" onClick={() => setMenuOpen(false)}>Events</Link>
           <Link to="/clubs" onClick={() => setMenuOpen(false)}>Clubs</Link>
